@@ -1,0 +1,25 @@
+//@version=5
+indicator(title="Moving Averages", shorttitle="MA", overlay=true, timeframe="", timeframe_gaps=true)
+
+//plotType = input.string("MACD", title="MA Type", options=["MACD", "Trend"], group="MA Settings")
+
+// MACD
+//isMACD = plotType == "MACD"
+//plot(isMACD ? ta.sma(close, 10) : na, color=color.green, linewidth=2, title="MA 10")
+//plot(isMACD ? ta.sma(close, 20) : na, color=color.red,   linewidth=2, title="MA 20")
+
+
+// Trend
+//isTrend = plotType == "Trend"
+//plot(isTrend ? ta.sma(close, 50)  : na, color=color.new(color.green,  70), linewidth=3, title="MA 50")
+//plot(isTrend ? ta.sma(close, 100) : na, color=color.new(color.yellow, 70), linewidth=3, title="MA 100")
+//plot(isTrend ? ta.sma(close, 150) : na, color=color.new(color.orange, 70), linewidth=3, title="MA 150")
+//plot(isTrend ? ta.sma(close, 200) : na, color=color.new(color.red,    70), linewidth=3, title="MA 200")
+
+
+plot(ta.sma(close, 10),  color=color.new(color.purple, 70), linewidth=4, title="MA 10")
+plot(ta.sma(close, 20),  color=color.new(color.blue,   70), linewidth=4, title="MA 20")
+plot(ta.sma(close, 50),  color=color.new(color.green,  70), linewidth=4, title="MA 50")
+plot(ta.sma(close, 100), color=color.new(color.yellow, 70), linewidth=4, title="MA 100")
+plot(ta.sma(close, 150), color=color.new(color.orange, 70), linewidth=4, title="MA 150")
+plot(ta.sma(close, 200), color=color.new(color.red,    70), linewidth=4, title="MA 200")
