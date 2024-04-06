@@ -1,0 +1,8 @@
+//@version=5
+indicator("Valuation", overlay=true)
+period = input.string(title="Financial Period", defval="FQ",options=["FQ", "FY"])
+
+eps = request.financial(syminfo.tickerid, "EARNINGS_ESTIMATE", period)
+pe = request.financial(syminfo.tickerid, "PRICE_EARNINGS_FORWARD", period)
+valuation = pe * eps
+plot(valuation, title='Forward price estimate', color=color.white, style=plot.style_stepline, linewidth=3)
